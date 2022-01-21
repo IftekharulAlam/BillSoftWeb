@@ -1,7 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 class AddProductPage extends StatefulWidget {
@@ -14,7 +12,29 @@ class AddProductPage extends StatefulWidget {
 }
 
 class _AddProductPageState extends State<AddProductPage> {
+  final TextEditingController _textFieldController = TextEditingController();
   String dropdownValue = 'One';
+  displayDialog() {
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Product Type'),
+            content: TextField(
+              controller: _textFieldController,
+              decoration: InputDecoration(hintText: "Product Type"),
+            ),
+            actions: <Widget>[
+              TextButton(
+                child: Text('Save'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          );
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +102,7 @@ class _AddProductPageState extends State<AddProductPage> {
                     width: 150,
                     height: 50,
                     child: ElevatedButton(
-                        onPressed: () {}, child: Text("Add New Type")),
+                        onPressed: displayDialog, child: Text("Add New Type")),
                   ),
                 ],
               ),
@@ -99,19 +119,13 @@ class _AddProductPageState extends State<AddProductPage> {
                 ),
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
                     width: 150,
                     height: 50,
-                    child: ElevatedButton(
-                        onPressed: () {}, child: Text("Registration")),
-                  ),
-                  SizedBox(
-                    width: 150,
-                    height: 50,
                     child:
-                        ElevatedButton(onPressed: () {}, child: Text("Login")),
+                        ElevatedButton(onPressed: () {}, child: Text("Save")),
                   ),
                 ],
               )

@@ -2,56 +2,70 @@
 
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
+
+class LoginPage extends StatefulWidget {
   const LoginPage({
     Key? key,
   }) : super(key: key);
 
   @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          child: SizedBox(
-            width: 500,
-            height: 400,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Icon(
-                  Icons.ac_unit,
-                  size: 100.0,
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Name',
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Container(
+            child: SizedBox(
+              width: 500,
+              height: 400,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Icon(
+                    Icons.ac_unit,
+                    size: 100.0,
                   ),
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Password',
+                  TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Name',
+                    ),
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    SizedBox(
-                      width: 150,
-                      height: 50,
-                      child: ElevatedButton(
-                          onPressed: () {}, child: Text("Login")),
+                  TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Password',
                     ),
-                    SizedBox(
-                      width: 150,
-                      height: 50,
-                      child: ElevatedButton(
-                          onPressed: () {}, child: Text("Registration")),
-                    ),
-                  ],
-                )
-              ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      SizedBox(
+                        width: 150,
+                        height: 50,
+                        child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/homePage');
+                            },
+                            child: Text("Login")),
+                      ),
+                      SizedBox(
+                        width: 150,
+                        height: 50,
+                        child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/registration');
+                            },
+                            child: Text("Registration")),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         ),

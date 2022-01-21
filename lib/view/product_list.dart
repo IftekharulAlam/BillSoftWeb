@@ -2,9 +2,14 @@
 
 import 'package:flutter/material.dart';
 
-class ProductList extends StatelessWidget {
+class ProductList extends StatefulWidget {
   const ProductList({Key? key}) : super(key: key);
 
+  @override
+  State<ProductList> createState() => _ProductListState();
+}
+
+class _ProductListState extends State<ProductList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +29,9 @@ class ProductList extends StatelessWidget {
                 children: [
                   TableRow(children: [
                     Column(children: [
-                      Center(child: Text('Product Name', style: TextStyle(fontSize: 20.0)))
+                      Center(
+                          child: Text('Product Name',
+                              style: TextStyle(fontSize: 20.0)))
                     ]),
                     Column(children: [
                       Text('Size', style: TextStyle(fontSize: 20.0))

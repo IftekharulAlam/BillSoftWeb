@@ -1,14 +1,19 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'dart:html';
+
 
 import 'package:flutter/material.dart';
 
-class RegistrationPage extends StatelessWidget {
+class RegistrationPage extends StatefulWidget {
   const RegistrationPage({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<RegistrationPage> createState() => _RegistrationPageState();
+}
+
+class _RegistrationPageState extends State<RegistrationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
