@@ -1,15 +1,15 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_unnecessary_containers
+// ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
 
-class ProductList extends StatefulWidget {
-  const ProductList({Key? key}) : super(key: key);
+class ListofBills extends StatefulWidget {
+  const ListofBills({Key? key}) : super(key: key);
 
   @override
-  State<ProductList> createState() => _ProductListState();
+  _ListofBillsState createState() => _ListofBillsState();
 }
 
-class _ProductListState extends State<ProductList> {
+class _ListofBillsState extends State<ListofBills> {
   DataTable _createDataTable() {
     return DataTable(columns: _createColumns(), rows: _createRows());
   }

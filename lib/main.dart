@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:web_19_1_22/view/LoginPage.dart';
 import 'package:web_19_1_22/view/RegistrationPage.dart';
 import 'package:web_19_1_22/view/add_product_page.dart';
+import 'package:web_19_1_22/view/list_of_bills.dart';
+import 'package:web_19_1_22/view/customer_list.dart';
 import 'package:web_19_1_22/view/home_page.dart';
 import 'package:web_19_1_22/view/make_bill_page.dart';
 import 'package:web_19_1_22/view/product_list.dart';
@@ -31,6 +33,8 @@ class _MyAppState extends State<MyApp> {
         '/productList': (context) => ProductList(),
         '/registration': (context) => RegistrationPage(),
         '/makeBill': (context) => MakeBillPage(),
+        '/ListOfBills': (context) => ListofBills(),
+        '/CustomerList': (context) => CustomerList(),
       },
     );
   }

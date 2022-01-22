@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -40,7 +39,7 @@ class _HomePageState extends State<HomePage> {
                       height: 50,
                       child: ElevatedButton(
                           onPressed: () {
-                          //  Navigator.pushNamed(context, '/');
+                            //  Navigator.pushNamed(context, '/');
                           },
                           child: Text("Remove Product")),
                     ),
@@ -66,6 +65,29 @@ class _HomePageState extends State<HomePage> {
                             Navigator.pushNamed(context, '/productList');
                           },
                           child: Text("Product List")),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SizedBox(
+                      width: 150,
+                      height: 50,
+                      child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/ListOfBills');
+                          },
+                          child: Text("Bill List")),
+                    ),
+                    SizedBox(
+                      width: 150,
+                      height: 50,
+                      child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/CustomerList');
+                          },
+                          child: Text("Customer List")),
                     ),
                   ],
                 ),
